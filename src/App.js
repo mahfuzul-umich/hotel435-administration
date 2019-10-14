@@ -1,23 +1,30 @@
-import React from 'react';
-import { GoogleLogin } from 'react-google-login';
+import React, { useEffect } from 'react';
+import { useAuth0 } from './Auth0Wrapper';
+import { withRouter } from 'react-router-dom';
+import queryString from 'query-string';
 
-function App() {
-  const response = user => {
-    console.log(user)
-  }
+function App(props) {
+  const { isAuthenticated, loginWithRedirect, logout, loading } = useAuth0();
+
+  useEffect(() => {
+    if (!isAuthenticated && !loading) {
+      if (props.history.location.search) {
+        let parsedQueryString = queryString.parse(props.history.location.search);
+        if (parsedQueryString.error) {
+          logout();
+          return;
+        }
+      }
+      loginWithRedirect({});
+      return;
+    }
+  }, [isAuthenticated, loading, loginWithRedirect, logout, props.history.location.search]);
 
   return (
     <div>
-      <GoogleLogin
-        clientId={process.env.REACT_APP_CLIENT_ID}
-        render={() => <div></div>}
-        onSuccess={response}
-        onFailure={response}
-        cookiePolicy={'single_host_origin'}
-        autoLoad
-      />
+      
     </div>
   );
 }
 
-export default App;
+export default withRouter(App);
