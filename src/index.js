@@ -5,6 +5,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Auth0Provider } from './Auth0Wrapper';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { grey } from '@material-ui/core/colors';
 
 const onRedirectCallback = appState => {
   window.history.replaceState(
@@ -16,6 +18,14 @@ const onRedirectCallback = appState => {
   );
 };
 
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: grey[900]
+    },
+  },
+});
+
 ReactDOM.render(
   <Router>
     <Auth0Provider
@@ -25,7 +35,9 @@ ReactDOM.render(
       onRedirectCallback={onRedirectCallback}
       audience={process.env.REACT_APP_AUDIENCE}
     >
-      <App />
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
     </Auth0Provider>
   </Router>, 
   document.getElementById('root')
