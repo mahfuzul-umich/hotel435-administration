@@ -3,3 +3,11 @@ html, body {
     padding: 0;
     box-sizing: border-box;
 }
+
+.fit {
+    width: 1%;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
