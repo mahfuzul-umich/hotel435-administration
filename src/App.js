@@ -26,7 +26,6 @@ import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
 import RouteHandler from './RouteHandler';
 import { Link } from 'react-router-dom';
-import DoorOpen from 'mdi-material-ui/DoorOpen';
 
 const drawerWidth = 240;
 
@@ -97,12 +96,6 @@ function App(props) {
             <FileMultiple />
           </ListItemIcon>
           <ListItemText primary='Reservations' />
-        </ListItem>
-        <ListItem button component={Link} to='/rooms'>
-          <ListItemIcon>
-            <DoorOpen />
-          </ListItemIcon>
-          <ListItemText primary='Rooms' />
         </ListItem>
       </List>
       <Divider />
