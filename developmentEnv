@@ -1,3 +1,3 @@
-REACT_APP_AUDIENCE=https://hotel435.azurewebsites.net
+REACT_APP_AUDIENCE=http://localhost:54957
 REACT_APP_DOMAIN=hotel435.auth0.com
 REACT_APP_CLIENT_ID=k4zJeSr6aBs0q0gQ5tvgJ7BDMWsjvJEY

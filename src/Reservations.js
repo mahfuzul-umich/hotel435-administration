@@ -19,6 +19,7 @@ import ChevronLeft from 'mdi-material-ui/ChevronLeft';
 import ChevronRight from 'mdi-material-ui/ChevronRight';
 import PageFirst from 'mdi-material-ui/PageFirst';
 import PageLast from 'mdi-material-ui/PageLast';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
 
 const useStyles1 = makeStyles(theme => ({
   root: {
@@ -162,26 +163,20 @@ function Reservations() {
           Price: ${room.price}
         </TableCell>
         <TableCell className='nowrap'>
-          <div style={{ display: 'flex' }}>
+          <ButtonGroup>
             <Button
-              variant='contained'
               disabled={reservation.actualCheckIn != null}
-              style={{ margin: 5 }}
-              color='primary'
               onClick={setActualCheckIn(model)}
             >
               Check In
-                        </Button>
+            </Button>
             <Button
-              variant='contained'
               disabled={reservation.actualCheckOut != null}
-              style={{ margin: 5 }}
-              color='primary'
               onClick={setActualCheckOut(model)}
             >
               Check Out
-                        </Button>
-          </div>
+            </Button>
+          </ButtonGroup>
         </TableCell>
       </TableRow>
     )
