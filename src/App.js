@@ -75,7 +75,7 @@ function App(props) {
   const drawer = (
     <React.Fragment>
       <List disablePadding style={{ height: drawerHeight }}>
-        <div style={{ backgroundColor: grey[300] }}>
+        <div>
           <ListItem
             dense
             style={{ height: 64 }}
@@ -134,7 +134,7 @@ function App(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed" className={classes.appBar}>
+      <AppBar position="fixed" className={classes.appBar} color='default'>
         <Toolbar>
           <IconButton
             color="inherit"

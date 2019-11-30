@@ -7,6 +7,7 @@ import { Auth0Provider } from './Auth0Wrapper';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import grey from '@material-ui/core/colors/grey';
 
 const onRedirectCallback = appState => {
   window.history.replaceState(
@@ -20,7 +21,8 @@ const onRedirectCallback = appState => {
 
 const theme = createMuiTheme({
   palette: {
-    type: 'dark'
+    type: 'dark',
+    primary: grey
   },
 });
 
