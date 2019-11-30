@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import { Auth0Provider } from './Auth0Wrapper';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import { grey } from '@material-ui/core/colors';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 const onRedirectCallback = appState => {
   window.history.replaceState(
@@ -20,9 +20,7 @@ const onRedirectCallback = appState => {
 
 const theme = createMuiTheme({
   palette: {
-    primary: {
-      main: grey[900]
-    },
+    type: 'dark'
   },
 });
 
@@ -36,6 +34,7 @@ ReactDOM.render(
       audience={process.env.REACT_APP_AUDIENCE}
     >
       <ThemeProvider theme={theme}>
+        <CssBaseline />
         <App />
       </ThemeProvider>
     </Auth0Provider>

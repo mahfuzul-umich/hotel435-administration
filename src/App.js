@@ -3,7 +3,6 @@ import { useAuth0 } from './Auth0Wrapper';
 import { withRouter } from 'react-router-dom';
 import queryString from 'query-string';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -135,7 +134,6 @@ function App(props) {
 
   return (
     <div className={classes.root}>
-      <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <IconButton
