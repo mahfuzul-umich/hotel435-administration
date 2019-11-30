@@ -185,7 +185,7 @@ function Reservations() {
   useEffect(() => {
     async function getReservations() {
       try {
-        let reservations = await AxiosCall({ url: `https://hotel435.azurewebsites.net/management/reservations`, method: 'GET' }, getTokenSilently);
+        let reservations = await AxiosCall({ url: `${process.env.REACT_APP_AUDIENCE}/management/reservations`, method: 'GET' }, getTokenSilently);
         setReservations(reservations.data);
       } catch (error) {
         setReservations({ error });
