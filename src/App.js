@@ -12,7 +12,6 @@ import Drawer from '@material-ui/core/Drawer';
 import Menu from 'mdi-material-ui/Menu';
 import AccountCircle from 'mdi-material-ui/AccountCircle';
 import Divider from '@material-ui/core/Divider';
-import grey from '@material-ui/core/colors/grey';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -56,7 +55,7 @@ const useStyles = makeStyles(theme => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
+    overflow: 'hidden'
   },
 }));
 
