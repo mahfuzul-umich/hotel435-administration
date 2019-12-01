@@ -60,8 +60,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function App(props) {
-  console.log(process.env.REACT_APP_AUDIENCE);
-  console.log(process.env);
   const { container } = props;
   const classes = useStyles();
   const theme = useTheme();
