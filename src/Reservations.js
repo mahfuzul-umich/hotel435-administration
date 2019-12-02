@@ -225,7 +225,7 @@ function Reservations() {
               <TableRow>
                 <TablePagination
                   rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
-                  colSpan={5}
+                  colSpan={6}
                   count={reservations.length}
                   rowsPerPage={rowsPerPage}
                   page={page}
