@@ -163,6 +163,9 @@ function Reservations() {
           Price: ${room.price}
         </TableCell>
         <TableCell className='nowrap'>
+          {reservation.confirmationNumber}
+        </TableCell>
+        <TableCell className='nowrap'>
           <ButtonGroup>
             <Button
               disabled={reservation.actualCheckIn != null}
@@ -209,6 +212,7 @@ function Reservations() {
                 <TableCell>Email</TableCell>
                 <TableCell>Reservation Dates</TableCell>
                 <TableCell>Room Details</TableCell>
+                <TableCell>Confirmation Number</TableCell>
                 <TableCell>Actions</TableCell>
               </TableRow>
             </TableHead>
